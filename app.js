@@ -7,15 +7,15 @@ function mouseout(x) {
 }
 
 var gridWidth = 16;
-var gridHeight = 16;
+var gridHeight = 10;
 
 var div = [];
-for (var i = 0; i < 16; i++) {
+for (var i = 0; i < gridHeight; i++) {
   div[i] = [];
   div[i] = document.createElement("div");
   div[i].setAttribute('id', "div" + i);                              
   document.getElementById("container").appendChild(div[i]);
-  for (var j = 0; j < 16; j++) {
+  for (var j = 0; j < gridWidth; j++) {
     div[i][j] = document.createElement("div");
     div[i][j].style.display = "inline-block";
     div[i][j].style.background = "lightgreen";
