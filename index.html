@@ -8,6 +8,14 @@
   <h1>Etch-a-Sketch?</h1>
   <div id="container"></div>
   <script type="text/javascript" src="app.js"></script>
-  <button id="clearButton" onclick="deleteCells(); promptForSize()">Clear</button>
+  <div id="inputs">
+    <button id="clearButton" onclick="deleteCells(); promptForSize()">Clear</button>
+    <select id="gridSize" onchange="updateGridSize()">
+      <option value="16">Grid Size</option>
+      <option value="16">16 x 16</option>
+      <option value="32">32 x 32</option>
+      <option value="64">64 x 64</option>
+    </select>
+  </div>
 </body>
 </html>
