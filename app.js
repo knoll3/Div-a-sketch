@@ -7,18 +7,14 @@ function drawGrid(size) {
       div.style.height    = cellSize + "px";
       div.style.float     = "left";
       div.style.boxSizing = "border-box";
-      
-      this.cellLightLevel = 150;
-      var self = this;
-      div.addEventListener('mouseover', function(e) {
-        console.log(self.cellLightLevel)
-        let color = `rgb(${self.cellLightLevel},${self.cellLightLevel},${self.cellLightLevel})`
-        e.target.style.backgroundColor = color;
-      });
-      
       document.getElementById("container").appendChild(div);
+      div.addEventListener('mouseover', changeColor);
     }
   }
+}
+
+function changeColor(e) {
+  e.target.style.backgroundColor = 'black';
 }
 
 function deleteCells() {
