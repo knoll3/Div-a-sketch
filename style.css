@@ -1,0 +1,13 @@
+#container {
+  height: 320px;
+  width: 320px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+#clearButton {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 20px;
+}
