@@ -8,7 +8,6 @@ function drawGrid(size) {
       div.style.float     = "left";
       div.style.boxSizing = "border-box";
       div.style.backgroundColor = 'rgb(255, 255, 255)'
-      div.setAttribute('id', y + '-' + x );
       document.getElementById("container").appendChild(div);
       div.addEventListener('mouseover', changeColor);
     }
@@ -16,25 +15,17 @@ function drawGrid(size) {
 }
 
 function changeColor(e) {
-  let div = e.target;
-  let color = div.style.backgroundColor;
+  let color = e.target.style.backgroundColor;
   let colorIndex = getFirstColorIndex(color);
   colorIndex -= 25;
-  div.style.backgroundColor = `rgb(${colorIndex}, ${colorIndex}, ${colorIndex}`;
-
-  
-  
+  e.target.style.backgroundColor = `rgb(${colorIndex}, ${colorIndex}, ${colorIndex}`;
 }
 
 function getFirstColorIndex(str) {
-  var re = /rgb\(([^\s\)]+)(?=,.+\))/g; 
-  var arr = [];
-  while ((m = re.exec(str)) !== null) {
-      arr.push(m[1]);
-  }
-  return Number(arr[0]);
+  let regex = /.*?(\d+)/;
+  let colorIndex = regex.exec(str)[1]
+  return colorIndex;
 }
-
 
 function deleteCells() {
   let cells = document.getElementById("container");
