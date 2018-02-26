@@ -1,6 +1,6 @@
 drawGrid(16);
 
-//--- FUNCTION DEFINITIONS --- ??
+//--- FUNCTION DEFINITIONS --- //
 
 function drawGrid(size) {
   for (let y = 0; y < size; y++) {
@@ -9,8 +9,7 @@ function drawGrid(size) {
       let cellSize = 320 / size;
       div.style.width     = cellSize + "px";
       div.style.height    = cellSize + "px";
-      div.style.float     = "left";
-      div.style.boxSizing = "border-box";
+      div.setAttribute('class', 'cell');
       let colorIndex = 255;
       let color = `rgb(${colorIndex}, ${colorIndex}, ${colorIndex})`;
       div.style.backgroundColor = color;
@@ -29,11 +28,6 @@ function deleteCells() {
   while (cells.hasChildNodes()) {
     cells.removeChild(cells.lastChild); 
   }
-}
-
-function promptForSize() {
-  let size = prompt("Input grid size:");
-  drawGrid(size);  
 }
 
 function updateGridSize() {
