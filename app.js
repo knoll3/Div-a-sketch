@@ -36,3 +36,8 @@ function promptForSize() {
   drawGrid(size);  
 }
 
+function updateGridSize() {
+  let size = document.getElementById('gridSize').value;
+  deleteCells();
+  drawGrid(size);
+}
