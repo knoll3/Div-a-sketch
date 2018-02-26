@@ -8,14 +8,15 @@ function drawGrid(size) {
       div.style.float     = "left";
       div.style.boxSizing = "border-box";
       
-      this.cellLightLevel = 255;
+      this.cellLightLevel = 150;
       var self = this;
-      this.changeColor = function(e) { 
+      div.addEventListener('mouseover', function(e) {
         console.log(self.cellLightLevel)
-        
-      }
+        let color = `rgb(${self.cellLightLevel},${self.cellLightLevel},${self.cellLightLevel})`
+        e.target.style.backgroundColor = color;
+      });
+      
       document.getElementById("container").appendChild(div);
-      div.addEventListener('mouseover', this.changeColor, true);
     }
   }
 }
