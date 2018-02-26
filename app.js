@@ -6,7 +6,7 @@ function drawGrid(size) {
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
       let div = document.createElement("div");
-      let cellSize = 320 / size;
+      let cellSize = 680 / size;
       div.style.width     = cellSize + "px";
       div.style.height    = cellSize + "px";
       div.setAttribute('class', 'cell');
