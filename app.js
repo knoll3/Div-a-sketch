@@ -1,21 +1,23 @@
 function drawGrid(size) {
-  for (y = 0; y < size; y++) {
-    for (x = 0; x < size; x++) {
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
       let div = document.createElement("div");
       let cellSize = 320 / size;
       div.style.width     = cellSize + "px";
       div.style.height    = cellSize + "px";
       div.style.float     = "left";
-      div.style.border    = "1px solid black";
       div.style.boxSizing = "border-box";
+      
+      this.cellLightLevel = 255;
+      var self = this;
+      this.changeColor = function(e) { 
+        console.log(self.cellLightLevel)
+        
+      }
       document.getElementById("container").appendChild(div);
-      div.addEventListener('mouseover', changeColor);
+      div.addEventListener('mouseover', this.changeColor, true);
     }
   }
-}
-
-function changeColor(e) {
-  e.target.style.background = "black";
 }
 
 function deleteCells() {
